@@ -21,8 +21,8 @@ Code layout
     set  s  'Example set'  / a, b, c /;
     ```
 
-- **Use 1 space after a comma in the list of arguments to a function.**
-- **Use 0 spaces after commas in dimension indices to a set or parameter.**
+- **Use 1 space after a comma in the list of arguments to a function:** `sameas(g, 'oil')`, not `sameas(g,'oil')`.
+- **Use 0 spaces after commas in dimension indices to a set or parameter:** `ee(i,g,r,t) = 1`.
 - **Put each set, parameter or scalar in a multiple declaration on a separate line.** Put the closing semicolon on its own line. Align the explanatory text and values.
 
     ```
@@ -36,6 +36,8 @@ Comments
 --------
 
 - **Enter explanatory text for all declared variables.** If the variable has a physical interpretation (economic value, energy, emissions, etc.) include the units, in parentheses.
+
+    For subsets, if an element has been given an explanatory text in the superset, no explanatory text is necessary.
 
 Directory structure
 -------------------
