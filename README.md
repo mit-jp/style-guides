@@ -25,19 +25,19 @@ Specific statements and constructs
 
 - **Specify dimensions in declarations.** Although the following code works:
 
-```
-set  s  'Example set'  / a, b, c /;
-parameter  p  'Example parameter;
-p(s) = 1;
-```
+    ```
+    set  s  'Example set'  / a, b, c /;
+    parameter  p  'Example parameter;
+    p(s) = 1;
+    ```
 
-The following is more clear if the first reference to a parameter is in a separate file or further away in the code:
+    The following is more clear if the first reference to a parameter is in a separate file or further away in the code:
 
-```
-set  s  'Example set'  / a, b, c /;
-parameter  p(s)  'Example parameter;
-p(s) = 1;
-```
+    ```
+    set  s  'Example set'  / a, b, c /;
+    parameter  p(s)  'Example parameter;
+    p(s) = 1;
+    ```
 
 - **Do not use the universal set (`*`), unless needed for specific purpose.** In multi-dimensional parameters, a declaration using the universal set multiple times does not clearly indicate what the order of the dimensions is.
 
@@ -48,10 +48,10 @@ Cross-platform compatibility
 
 - **Use `%slash%` instead of `/` or `\`.** The forward and backward slash characters are path separators in Unix (incl. Linux and Mac OS) and Windows respectively. Hard-coding one of these, for instance in `$include` statements, guarantees that the code will *not* run on the other OS. Instead, use a variable like `%slash%`, declared *only once* as follows:
 
-```
-$setglobal slash \
-$if %system.filesys% == UNIX $setglobal slash /
-```
+    ```
+    $setglobal slash \
+    $if %system.filesys% == UNIX $setglobal slash /
+    ```
 
 References
 ----------
